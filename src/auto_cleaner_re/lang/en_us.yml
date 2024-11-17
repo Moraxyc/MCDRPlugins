@@ -1,0 +1,19 @@
+auto_cleaner_re.help_message: |
+    ---- {name} v{version} ----
+    §7{prefix}§r: Display help information
+    §7{prefix} enable§r: Start the auto cleaner
+    §7{prefix} disable§r: Stop the auto cleaner
+    §7{prefix} ignore_player_items §6<true/false>§r: Enable/Disable ignoring items dropped by players upon death
+    §7{prefix} ignore_distance §6<ignore_distance>§r: Set ignore radius
+    §7{prefix} set_interval §6<interval_sec>§r: Set cleaning interval, in seconds, at least 45
+auto_cleaner_re.permission_denied: "Permission Denied"
+auto_cleaner_re.set_enable.false: "§7AutoCleaner: Disabled§r"
+auto_cleaner_re.set_enable.true: "§7AutoCleaner: Enabled§r"
+auto_cleaner_re.ignore_player_items.true: "§7AutoCleaner: Ignoring drops within {0} radius on player death§r"
+auto_cleaner_re.ignore_player_items.false: "§7AutoCleaner: Cleaning indiscriminately§r"
+auto_cleaner_re.set_interval: "§7AutoCleaner: Cleaning interval set to {0} seconds§r"
+auto_cleaner_re.set_ignore_distance: "§7AutoCleaner: Ignore radius set to {0}§r"
+auto_cleaner_re.cleaned_items: "§7AutoCleaner: Cleared {0} dropped items§r"
+auto_cleaner_re.seconds_later: "§7AutoCleaner: Starting cleanup in {0} seconds§r"
+auto_cleaner_re.clean: "§7AutoCleaner: Cleanup started§r"
+auto_cleaner_re.next_clean: "§7AutoCleaner: Next cleanup scheduled at {0}§r"

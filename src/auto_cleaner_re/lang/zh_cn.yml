@@ -1,0 +1,19 @@
+auto_cleaner_re.help_message: |
+  ---- {name} v{version} ----
+  §7{prefix}§r: 显示帮助信息
+  §7{prefix} enable§r: 启动扫地机
+  §7{prefix} disable§r: 关闭扫地机
+  §7{prefix} ignore_player_items §6<true/false>§r: 启用/关闭 清扫时忽略因玩家死亡而掉落的物品
+  §7{prefix} ignore_distance §6<ignore_distance>§r: 设置忽略半径
+  §7{prefix} set_interval §6<interval_sec>§r: 设置清扫间隔，单位：秒，最低45
+auto_cleaner_re.permission_denied: 权限不足
+auto_cleaner_re.set_enable.false: "§7扫地机: 已关闭§r"
+auto_cleaner_re.set_enable.true: "§7扫地机: 已启动§r"
+auto_cleaner_re.ignore_player_items.true: "§7扫地机: 清扫时将忽略玩家死亡半径{0}内的掉落物§r"
+auto_cleaner_re.ignore_player_items.false: "§7扫地机: 清扫时一视同仁§r"
+auto_cleaner_re.set_interval: "§7扫地机: 已将清扫间隔设置为{0}秒§r"
+auto_cleaner_re.set_ignore_distance: "§7扫地机: 已将清扫忽略半径设置为{0}§r"
+auto_cleaner_re.cleaned_items: "§7扫地机: 已清扫{0}个掉落物§r"
+auto_cleaner_re.seconds_later: "§7扫地机: {0}秒后开始清扫§r"
+auto_cleaner_re.clean: "§7扫地机: 清扫开始§r"
+auto_cleaner_re.next_clean: "§7扫地机§7: 下次清扫时间 {0}§r"

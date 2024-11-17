@@ -1,0 +1,16 @@
+{
+  "pull-request-title-pattern": "chore${scope}: release ${component} ${version}",
+  "extra-files": [
+    {
+      "type": "json",
+      "path": "mcdreforged.plugin.json",
+      "jsonpath": "$.version"
+    }
+  ],
+  "separate-pull-requests": true,
+  "packages": {
+    "src/auto_cleaner_re": {
+      "package-name": "auto_cleaner_re"
+    }
+  }
+}
