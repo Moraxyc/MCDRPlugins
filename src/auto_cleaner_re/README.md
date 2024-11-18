@@ -7,6 +7,7 @@
 ## 命令
 ```
   !!acr: 显示帮助信息
+  !!acr status: 显示扫地机状态信息
   !!acr enable: 启动扫地机
   !!acr disable: 关闭扫地机
   !!acr ignore_player_items <true/false>: 启用/关闭 清扫时忽略因玩家死亡而掉落的物品
