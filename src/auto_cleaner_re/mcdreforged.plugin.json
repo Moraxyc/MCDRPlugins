@@ -1,17 +1,22 @@
 {
   "id": "auto_cleaner_re",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "AutoCleanerRe",
   "description": {
     "en_us": "Another items cleaner",
     "zh_cn": "又一款复活的扫地大妈"
   },
-  "author": ["Moraxyc"],
+  "author": [
+    "Moraxyc"
+  ],
   "link": "https://github.com/Moraxyc/MCDRPlugins",
   "dependencies": {
     "mcdreforged": ">=2.0.0-alpha.1",
     "xevents": ">=1.0.0"
   },
   "entrypoint": "auto_cleaner_re.entry",
-  "resources": ["lang", "../../LICENSE"]
+  "resources": [
+    "lang",
+    "../../LICENSE"
+  ]
 }
