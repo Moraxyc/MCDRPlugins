@@ -42,20 +42,15 @@ jobs:
       - name: Check Out
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Nix
+        uses: cachix/install-nix-action@v27
         with:
-          python-version: '3.12'
-
-      - name: Install Dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install mcdreforged
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Package
         id: pack
         run: |
-          mcdreforged pack --ignore-patterns __pycache__ -i ${{ needs.release-please.outputs.path }}
+          nix develop --ignore-environment --command mcdreforged pack --ignore-patterns __pycache__ -i ${{ needs.release-please.outputs.path }}
           echo "name=$(ls *.mcdr)" >> $GITHUB_OUTPUT
 
       - name: Upload
