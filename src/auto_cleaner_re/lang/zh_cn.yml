@@ -1,6 +1,7 @@
 auto_cleaner_re.help_message: |
   ---- {name} v{version} ----
   §7{prefix}§r: 显示帮助信息
+  §7{prefix} status§r: 显示扫地机状态
   §7{prefix} enable§r: 启动扫地机
   §7{prefix} disable§r: 关闭扫地机
   §7{prefix} ignore_player_items §6<true/false>§r: 启用/关闭 清扫时忽略因玩家死亡而掉落的物品
@@ -16,4 +17,5 @@ auto_cleaner_re.set_ignore_distance: "§7扫地机: 已将清扫忽略半径设�
 auto_cleaner_re.cleaned_items: "§7扫地机: 已清扫{0}个掉落物§r"
 auto_cleaner_re.seconds_later: "§7扫地机: {0}秒后开始清扫§r"
 auto_cleaner_re.clean: "§7扫地机: 清扫开始§r"
-auto_cleaner_re.next_clean: "§7扫地机§7: 下次清扫时间 {0}§r"
+auto_cleaner_re.next_clean: "§7扫地机§7: 下次清扫将在 {0} 秒后 ({1})§r"
+auto_cleaner_re.status: "§7扫地机§7: 运行中 {0}§r"

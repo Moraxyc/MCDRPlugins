@@ -4,6 +4,8 @@ from mcdreforged.api.all import (
     CommandSource,
     Integer,
     Boolean,
+    RText,
+    RColor,
 )
 
 
@@ -23,6 +25,11 @@ def show_help(source: CommandSource):
             prefix=PREFIX,
         )
     )
+
+def show_status(source: CommandSource):
+    source.reply(tr('status', RText(common.worker.is_running(), RColor.green if common.worker.is_running() else RColor.red)))
+    if common.worker.is_running():
+        source.reply(common.worker.get_next_clean_time())
 
 
 def set_enable(source: CommandSource, value: bool):
@@ -68,6 +75,7 @@ def register(server: PluginServerInterface):
             lambda: tr("permission_denied"),
         )
         .runs(show_help)
+        .then(Literal('status').runs(lambda src: show_status(src)))
         .then(Literal("enable").runs(lambda src: set_enable(src, True)))
         .then(Literal("disable").runs(lambda src: set_enable(src, False)))
         .then(
