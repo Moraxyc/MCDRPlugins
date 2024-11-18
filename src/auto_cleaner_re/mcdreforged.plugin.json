@@ -1,22 +1,17 @@
 {
-    "id": "auto_cleaner_re",
-    "version": "1.1.0",
-    "name": "AutoCleanerRe",
-    "description": {
-        "en_us": "Another items cleaner, supports ignoring items dropped due to player death (fuzzy matching).",
-        "zh_cn": "又一款复活的扫地大妈，支持忽略玩家死亡掉落的物品(模糊匹配)"
-    },
-    "author": [
-        "Moraxyc"
-    ],
-    "link": "https://github.com/Moraxyc/MCDR-AutoCleanerRe",
-    "dependencies": {
-        "mcdreforged": ">=2.0.0-alpha.1",
-        "xevents": ">=1.0.0"
-    },
-    "entrypoint": "auto_cleaner_re.entry",
-    "resources": [
-        "lang",
-        "LICENSE"
-    ]
+  "id": "auto_cleaner_re",
+  "version": "1.1.0",
+  "name": "AutoCleanerRe",
+  "description": {
+    "en_us": "Another items cleaner, supports ignoring items dropped due to player death (fuzzy matching).",
+    "zh_cn": "又一款复活的扫地大妈，支持忽略玩家死亡掉落的物品(模糊匹配)"
+  },
+  "author": ["Moraxyc"],
+  "link": "https://github.com/Moraxyc/MCDR-AutoCleanerRe",
+  "dependencies": {
+    "mcdreforged": ">=2.0.0-alpha.1",
+    "xevents": ">=1.0.0"
+  },
+  "entrypoint": "auto_cleaner_re.entry",
+  "resources": ["lang", "../../LICENSE"]
 }
