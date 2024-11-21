@@ -16,7 +16,7 @@
 ```
 
 ## 依赖项
-- 必需依赖：MCDR插件[xEvents](https://mcdreforged.com/zh-CN/plugin/xevents)（用于监听玩家死亡事件）
+无
 
 ## 局限性
 玩家死亡时掉落的物品与玩家之间并没有联系，无法做到精确关联。本插件的做法是玩家死亡半径内的物品打上标签，使用`/kill @e[type=item,tag=!player_death]`来反匹配不含标签的掉落物

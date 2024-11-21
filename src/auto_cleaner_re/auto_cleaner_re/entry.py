@@ -11,7 +11,7 @@ from mcdreforged.api.all import (
 
 from auto_cleaner_re.common import tr, metadata
 from auto_cleaner_re import common
-from auto_cleaner_re.utils import tag_player_items, cleaned_items
+from auto_cleaner_re.utils import death_event, cleaned_items
 
 PREFIX = "!!acr"
 
@@ -26,8 +26,17 @@ def show_help(source: CommandSource):
         )
     )
 
+
 def show_status(source: CommandSource):
-    source.reply(tr('status', RText(common.worker.is_running(), RColor.green if common.worker.is_running() else RColor.red)))
+    source.reply(
+        tr(
+            "status",
+            RText(
+                common.worker.is_running(),
+                RColor.green if common.worker.is_running() else RColor.red,
+            ),
+        )
+    )
     if common.worker.is_running():
         source.reply(common.worker.get_next_clean_time())
 
@@ -75,7 +84,7 @@ def register(server: PluginServerInterface):
             lambda: tr("permission_denied"),
         )
         .runs(show_help)
-        .then(Literal('status').runs(lambda src: show_status(src)))
+        .then(Literal("status").runs(lambda src: show_status(src)))
         .then(Literal("enable").runs(lambda src: set_enable(src, True)))
         .then(Literal("disable").runs(lambda src: set_enable(src, False)))
         .then(
@@ -102,7 +111,7 @@ def register(server: PluginServerInterface):
     )
     server.register_help_message(PREFIX, tr("help_message"))
 
-    server.register_event_listener("xevents.player_death", tag_player_items)
+    server.register_event_listener("mcdr.general_info", death_event)
     server.register_event_listener("mcdr.general_info", cleaned_items)
 
 

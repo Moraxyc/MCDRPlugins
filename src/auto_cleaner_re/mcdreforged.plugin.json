@@ -11,8 +11,7 @@
   ],
   "link": "https://github.com/Moraxyc/MCDRPlugins",
   "dependencies": {
-    "mcdreforged": ">=2.0.0-alpha.1",
-    "xevents": ">=1.0.0"
+    "mcdreforged": ">=2.0.0-alpha.1"
   },
   "entrypoint": "auto_cleaner_re.entry",
   "resources": [

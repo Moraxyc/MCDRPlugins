@@ -3,11 +3,11 @@ from auto_cleaner_re import common
 from auto_cleaner_re.common import server_inst, item_counter, tr
 import re
 
+from auto_cleaner_re.death_msg import RE_LIST
 
-def tag_player_items(server: PluginServerInterface, info: Info):
-    death_split = info.content.split(" ")
-    player = death_split[0]
-    server.execute(
+
+def tag_player_items(player: str):
+    server_inst.execute(
         f"execute at {player} run execute as @e[type=item,distance=..{common.config.ignore_distance}] run tag @s add player_death"
     )
 
@@ -41,3 +41,12 @@ def cleaned_items(server: PluginServerInterface, info: Info):
             server.broadcast(tr("cleaned_items", "0"))
             item_counter = False
             return
+
+
+def death_event(server: PluginServerInterface, info: Info):
+    if info.is_user:
+        return False
+    for re_exp in RE_LIST:
+        match = re.fullmatch(re_exp, info.content)
+        if match:
+            tag_player_items(match.group(1))

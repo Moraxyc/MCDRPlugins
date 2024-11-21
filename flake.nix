@@ -31,12 +31,13 @@
               venvDir = ".venv";
               packages =
                 with pkgs;
-                [ python312 ]
+                [
+                  python312
+                  mcdreforged
+                ]
                 ++ (with pkgs.python312Packages; [
                   pip
                   venvShellHook
-
-                  mcdreforged
                 ]);
             };
           };
