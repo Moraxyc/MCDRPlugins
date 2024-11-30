@@ -3,7 +3,7 @@ import time
 import uuid
 
 from typing import Optional
-from mcdreforged.api.all import RTextBase,RText,RColor
+from mcdreforged.api.all import RTextBase, RText, RColor
 
 
 from auto_cleaner_re import common
@@ -21,9 +21,8 @@ class AutoCleanWorker:
 
     def get_next_clean_time(self):
         time_next = self.last_clean_time + common.config.clean_interval_sec
-        time_text = time.strftime('%H:%M:%S', time.localtime(time_next))
-        return tr('next_clean', round(time_next - time.time(), 1),time_text)
-
+        time_text = time.strftime("%H:%M:%S", time.localtime(time_next))
+        return tr("next_clean", round(time_next - time.time(), 1), time_text)
 
     def on_config_changed(self):
         if common.config.enabled:
@@ -60,15 +59,29 @@ class AutoCleanWorker:
     def __thread_loop(self):
         while True:
             next_clean_time = self.last_clean_time + common.config.clean_interval_sec
-            time_to_wait = max(0.0, next_clean_time - time.time() - 10.0)
+            time_to_wait = max(0.0, next_clean_time - time.time() - 30.0)
             if self.__stop_event.wait(time_to_wait):
                 break
             try:
-                server_inst.broadcast(tr("seconds_later", "10"))
-                time.sleep(7)
-                for i in range(3, 0, -1):
-                    server_inst.broadcast(tr("seconds_later", i))
-                    time.sleep(1)
+                countdown_start_time = time.time()
+                countdown_duration = 30
+
+                while time.time() - countdown_start_time < countdown_duration:
+                    time_remaining = countdown_duration - (
+                        time.time() - countdown_start_time
+                    )
+
+                    if time_remaining > 3:
+                        if int(time_remaining) % 10 == 0:
+                            server_inst.broadcast(
+                                tr("seconds_later", int(time_remaining))
+                            )
+                        if self.__stop_event.wait(1):
+                            break
+                    else:
+                        server_inst.broadcast(tr("seconds_later", int(time_remaining)))
+                        if self.__stop_event.wait(1):
+                            break
                 self.clean()
             except Exception:
                 self.logger.exception("Error ticking {}".format(metadata.name))
