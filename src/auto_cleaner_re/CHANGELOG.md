@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Moraxyc/MCDRPlugins/compare/auto_cleaner_re-v1.3.0...auto_cleaner_re-v1.4.0) (2024-11-30)
+
+
+### Features
+
+* **acr:** non-blocking timing countdown ([93206c0](https://github.com/Moraxyc/MCDRPlugins/commit/93206c0a209d349b9acf6392f4e45cbf268695f2))
+
 ## [1.3.0](https://github.com/Moraxyc/MCDRPlugins/compare/auto_cleaner_re-v1.2.0...auto_cleaner_re-v1.3.0) (2024-11-21)
 
 
