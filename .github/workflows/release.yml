@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Release Please
-        uses: googleapis/release-please-action@v4
+        uses: googleapis/release-please-action@v5
         id: release-please
         with:
           config-file: .release-please/release-please-config.json
